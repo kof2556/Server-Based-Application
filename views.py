@@ -13,25 +13,25 @@ def index(request):
     ''')
 #blog page
 def blog(request):
-   
+    content_html = open("content/blog.html").read()
     context = {
-       
+       "content": content_html,
     }
-    return render(request, 'blog.html', context)
+    return render(request, 'base.html', context)
 #projects page    
- def projects(request):
-   
+def projects(request):
+    content_html = open("content/projects.html").read()
     context = {
-       
+        "content": content_html,
     }
-    return render(request, 'projects.html', context)
+    return render(request, 'base.html', context)
 #about me page
 def about(request):
-  
+    content_html = open("content/about.html").read()
     context = {
-        
+        "content": content_html,
     }
-    return render(request, 'about.html', context)
+    return render(request, 'base.html', context)
 
 
 
