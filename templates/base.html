@@ -64,8 +64,9 @@ font-size:40px;
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item active px-lg-4">
+               {% for page in pages %}
             <a class="nav-link text-uppercase text-expanded"
-            {% for page in pages %}
+        
              href="index.html"><span class="juice">Home</span>
               <span class="sr-only">(current)</span>
             </a>
