@@ -3,7 +3,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 #Functions for pages
 def index(request):
-  
+    content_html = open("content/index.html").read()
+    ontext = {
+       "content": content_html,
+    }
+    return render(request, 'base.html', context)
     return HttpResponse('''
         <h1>Welcome to my home page!</h1>
         <a href="/blog">Blog</a> <br />
@@ -33,5 +37,6 @@ def about(request):
     }
     return render(request, 'base.html', context)
 
+#virtual site is working, make sure to add navigations onto the other pages and see about css 
 
 
