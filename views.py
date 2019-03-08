@@ -37,6 +37,7 @@ def about(request):
     }
     return render(request, 'base.html', context)
 
-#virtual site is working, make sure to add navigations onto the other pages and see about css 
+#virtual site is working, make sure to add navigations onto the other pages and see about css, as well as adding background pics and all to folders, also redo nav bar for website to make it work 
+
 
 
