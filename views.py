@@ -6,15 +6,10 @@ def index(request):
     content_html = open("content/index.html").read()
     context = {
        "content": content_html,
+       
     }
     return render(request, 'base.html', context)
-#    return HttpResponse('''
-#        <h1>Welcome to my home page!</h1>
-#        <a href="/blog">Blog</a> <br />
-#        <a href="/projects">Projects</a> <br />
-#        <a href="/about">About me</a> <br />
-#        <a href="/github-api-example">See my GitHub contributions</a> <br />
-#    ''')
+    
 #blog page
 def blog(request):
     content_html = open("content/blog.html").read()
@@ -37,7 +32,14 @@ def about(request):
     }
     return render(request, 'base.html', context)
 
-#virtual site is working, make sure to add navigations onto the other pages and see about css, as well as adding background pics and all to folders, also redo nav bar for website to make it work 
 
+def github_api_example(request):
+    # We can also combine Django with APIs, or 
+    response = requests.get('https://github.com/kof2556/Server-Based-Application')
+    repos = response.json()
+    context = {
+        'github_repos': repos,
+    }
+    return render(request, 'github.html', context)
 
 

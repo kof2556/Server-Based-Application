@@ -8,6 +8,7 @@ urlpatterns = [
     path('blog', views.blog),
     path('projects', views.projects),
     path('about', views.about),
+    path('github-api-example', views.github_api_example),
 ]
 
 # Boilerplate to include static files
